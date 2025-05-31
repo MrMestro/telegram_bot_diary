@@ -94,7 +94,7 @@ async def evening_routine():
 
 # === Планировщик времени ===
 def run_schedule(loop):
-    schedule.every().day.at("16:30").do(lambda: asyncio.run_coroutine_threadsafe(morning_routine(), loop))
+    schedule.every().day.at("8:00").do(lambda: asyncio.run_coroutine_threadsafe(morning_routine(), loop))
     schedule.every().day.at("20:00").do(lambda: asyncio.run_coroutine_threadsafe(evening_routine(), loop))
     while True:
         schedule.run_pending()
